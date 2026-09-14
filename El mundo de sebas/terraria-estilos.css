@@ -1,0 +1,410 @@
+/* ===== Variables de color - Tema Terraria (Modo Oscuro, por defecto) ===== */
+:root {
+  --fondo: #0f1a12;
+  --fondo-claro: #16241a;
+  --tarjeta: #4a5a4e;
+  --acento: #7cb518;   /* verde césped */
+  --acento-hover: #9ad926;
+  --acento-secundario: #b5651d; /* tierra */
+  --texto: #eef2ea;
+  --texto-secundario: #a9b8a3;
+  --borde: #2c3f30;
+}
+
+/* ===== Modo claro ===== */
+body.modo-claro {
+  --fondo: #f4f8ef;
+  --fondo-claro: #e6efdc;
+  --tarjeta: #ffffff;
+  --acento: #4c7a0f;
+  --acento-hover: #5f9612;
+  --acento-secundario: #8a4b12;
+  --texto: #1a2416;
+  --texto-secundario: #4b5a44;
+  --borde: #d3e0c6;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--fondo);
+  color: var(--texto);
+  line-height: 1.6;
+}
+
+/* ===== Header ===== */
+header {
+  background-color: var(--fondo-claro);
+  padding: 20px 5%;
+  border-bottom: 3px solid var(--acento);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+header h1 {
+  color: var(--acento);
+  font-size: 1.9rem;
+  margin-bottom: 10px;
+}
+
+.header-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.header-top h1 {
+  margin-bottom: 0;
+}
+
+.modo-toggle {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  color: var(--texto);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+
+.modo-toggle:hover {
+  background-color: var(--acento);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  color: var(--texto);
+  text-decoration: none;
+  font-weight: 600;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+  color: var(--acento);
+  border-bottom: 2px solid var(--acento);
+}
+
+/* ===== Main / Secciones ===== */
+main {
+  padding: 40px 5%;
+}
+
+section {
+  margin-bottom: 60px;
+}
+
+section h2 {
+  font-size: 1.7rem;
+  margin-bottom: 18px;
+  border-left: 5px solid var(--acento);
+  padding-left: 12px;
+}
+
+section > p {
+  color: var(--texto-secundario);
+  max-width: 800px;
+  margin-bottom: 15px;
+}
+
+/* ===== Carrusel automático ===== */
+.carrusel-wrapper {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--borde);
+}
+
+.carrusel {
+  overflow: hidden;
+  position: relative;
+  background-color: var(--tarjeta);
+}
+
+.carrusel-track {
+  display: flex;
+  transition: transform 0.6s ease;
+}
+
+.carrusel-slide {
+  min-width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 25px;
+  padding: 35px;
+}
+
+/* Espacio reservado para imagen */
+.carrusel-imagen {
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: var(--fondo-claro);
+  border: 2px dashed var(--borde);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  text-align: center;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.carrusel-imagen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.carrusel-info h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: var(--acento);
+}
+
+.carrusel-info p {
+  color: var(--texto-secundario);
+  max-width: 550px;
+}
+
+.carrusel-dots {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--borde);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.dot.activo {
+  background-color: var(--acento);
+}
+
+.carrusel-nota {
+  text-align: center;
+  font-size: 0.8rem;
+  color: var(--texto-secundario);
+  margin-top: 10px;
+}
+
+/* ===== Información general ===== */
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.info-card {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 18px 20px;
+}
+
+.info-card h4 {
+  color: var(--acento);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.info-card p {
+  font-size: 1rem;
+  color: var(--texto);
+}
+
+/* ===== Popularidad / Gráfico de ventas ===== */
+.grafico-panel {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 24px;
+  text-align: center;
+}
+
+.grafico-panel canvas {
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn-exportar {
+  background-color: #1d6f42; /* verde estilo Excel */
+  color: #fff;
+  border: none;
+  padding: 12px 22px;
+  border-radius: 1px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-exportar:hover {
+  background-color: #24924f;
+}
+
+/* ===== Tabs NPCs / Jefes ===== */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.tab-btn {
+  background-color: var(--tarjeta);
+  color: var(--texto);
+  border: 1px solid var(--borde);
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.tab-btn:hover,
+.tab-btn.activo {
+  background-color: var(--acento);
+  border-color: var(--acento);
+  color: #10210f;
+  font-weight: 600;
+}
+
+.personajes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 18px;
+}
+
+.personaje-card {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 16px 18px;
+}
+
+.personaje-card h4 {
+  color: var(--acento);
+  margin-bottom: 6px;
+}
+
+.personaje-card p {
+  color: var(--texto-secundario);
+  font-size: 0.9rem;
+}
+
+.etiqueta-jefe {
+  display: inline-block;
+  margin-top: 8px;
+  background-color: rgba(181, 101, 29, 0.2);
+  color: var(--acento-secundario);
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+/* ===== Artículos ===== */
+.articulos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.articulo-card {
+  background-color: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.articulo-card h4 {
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.articulo-card p {
+  color: var(--texto-secundario);
+  font-size: 0.92rem;
+  margin-bottom: 12px;
+  flex: 1;
+}
+
+.articulo-card a {
+  color: var(--acento);
+  font-size: 0.85rem;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.articulo-card a:hover {
+  text-decoration: underline;
+}
+
+/* ===== Footer ===== */
+footer {
+  background-color: var(--fondo-claro);
+  text-align: center;
+  padding: 20px;
+  color: var(--texto-secundario);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--borde);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.4rem;
+  }
+
+  section h2 {
+    font-size: 1.4rem;
+  }
+
+  .carrusel-slide {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .carrusel-imagen {
+    width: 100%;
+    height: 180px;
+  }
+
+  .carrusel-info p {
+    max-width: 100%;
+  }
+}

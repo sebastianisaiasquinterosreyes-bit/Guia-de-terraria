@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terraria | Guía Informativa</title>
+  <link rel="stylesheet" href="terraria-estilos.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-top">
+      <h1> Terraria — Guía Informativa</h1>
+      <button id="modoToggle" class="modo-toggle" aria-label="Cambiar modo claro/oscuro">🌙</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#destacados">Destacados</a></li>
+        <li><a href="#info">Información</a></li>
+        <li><a href="#popularidad">Popularidad</a></li>
+        <li><a href="#personajes">NPCs y Jefes</a></li>
+        <li><a href="#articulos">Artículos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="inicio">
+      <h2>¿Qué es Terraria?</h2>
+      <p>
+        Terraria es un videojuego de acción, aventura y construcción en mundo abierto tipo "sandbox" en 2D,
+        desarrollado de forma independiente por el estudio <strong>Re-Logic</strong>. Combina exploración,
+        minería, artesanía, construcción y combate contra criaturas y jefes en un mundo generado
+        proceduralmente. Esta página reúne información general del juego, sus personajes principales
+        y algunos artículos sobre su historia, con fines puramente informativos.
+      </p>
+    </section>
+
+    <section id="destacados">
+      <h2>Momentos Destacados</h2>
+      <div class="carrusel-wrapper">
+        <div class="carrusel" id="carrusel">
+          <!-- Las diapositivas se generan dinámicamente con terraria-script.js -->
+        </div>
+      </div>
+      <div class="carrusel-dots" id="carruselDots">
+        <!-- Los puntos se generan dinámicamente con terraria-script.js -->
+      </div>
+      <p class="carrusel-nota"></p>
+    </section>
+
+    <section id="info">
+      <h2>Información General</h2>
+      <div class="info-grid" id="infoGrid">
+        <!-- Se genera dinámicamente con terraria-script.js -->
+      </div>
+    </section>
+
+    <section id="popularidad">
+      <h2>Popularidad y Ventas</h2>
+      <p>
+        Terraria es uno de los videojuegos independientes más vendidos de la historia. A continuación,
+        la evolución aproximada de copias vendidas acumuladas a nivel mundial, según cifras publicadas
+        por Re-Logic a lo largo de los años.
+      </p>
+      <div class="grafico-panel">
+        <canvas id="ventasGrafico" height="110"></canvas>
+        <button id="exportarExcelBtn" class="btn-exportar"> Exportar datos a Excel</button>
+      </div>
+    </section>
+
+    <section id="personajes">
+      <h2>NPCs y Jefes</h2>
+      <p>Terraria no tiene un protagonista con nombre: el jugador crea y controla a su propio personaje.
+        En cambio, el mundo está poblado de NPCs que ofrecen servicios y de poderosos jefes que ponen a
+        prueba al jugador.</p>
+
+      <div class="tabs">
+        <button class="tab-btn activo" data-tab="npcs">NPCs</button>
+        <button class="tab-btn" data-tab="jefes">Jefes</button>
+      </div>
+
+      <div class="personajes-grid" id="personajesGrid">
+        <!-- Se genera dinámicamente con terraria-script.js -->
+      </div>
+    </section>
+
+    <section id="articulos">
+      <h2>Artículos sobre Terraria</h2>
+      <div class="articulos-grid" id="articulosGrid">
+        <!-- Se genera dinámicamente con terraria-script.js -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2026 Guía Informativa de Terraria. Página educativa/fan-made sin fines comerciales. Terraria es una marca de Re-Logic.</p>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <script src="terraria-script.js"></script>
+</body>
+</html>
